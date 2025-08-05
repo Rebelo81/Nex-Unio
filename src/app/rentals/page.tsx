@@ -20,11 +20,11 @@ import {
   PrinterIcon,
   TruckIcon,
   CheckIcon,
-  RefreshCwIcon,
+  ArrowPathIcon as RefreshCwIcon,
   MapPinIcon,
   CheckCircleIcon,
   CalendarIcon,
-  ExternalLinkIcon
+  ArrowTopRightOnSquareIcon as ExternalLinkIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { toast } from 'sonner';
