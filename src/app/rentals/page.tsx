@@ -147,7 +147,6 @@ export default function RentalsPage() {
           aguardando_lalamove: 1,
           aguardando_motorista: 1,
           indo_cliente: 1,
-          em_transporte: 1,
           entregue: 0,
           em_uso: 0,
           devolucao_solicitada: 1,
