@@ -113,6 +113,41 @@ table {
   color: #ffff00 !important;
 }
 
+/* Override Tailwind text colors */
+.text-gray-900, .text-gray-800, .text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400 {
+  color: #ffff00 !important;
+}
+
+.text-white, .text-black {
+  color: #ffff00 !important;
+}
+
+/* Override Tailwind background colors */
+.bg-gray-50, .bg-gray-100, .bg-gray-200, .bg-slate-50 {
+  background-color: #1a1a1a !important;
+}
+
+.bg-white {
+  background-color: #0a0a0a !important;
+}
+
+/* Navigation and sidebar */
+nav, .sidebar, aside {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+/* Focus states */
+*:focus {
+  outline-color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+/* Links */
+a:hover {
+  color: #cccc00 !important;
+}
+
 /* Pro Rentals Custom Styles */
 .pro-gradient {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
