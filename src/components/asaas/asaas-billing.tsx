@@ -166,12 +166,7 @@ export function AsaasBilling({
         cpfCnpj: customerData.cpfCnpj,
         email: customerData.email,
         phone: customerData.phone,
-        externalReference: rentalId,
-        notificationDisabled: !billingData.sendNotification,
-        additionalEmails: '',
-        municipalInscription: '',
-        stateInscription: '',
-        observations: `Cliente da locação ${rentalId} - Cobrança de avarias`,
+        notificationDisabled: !billingData.sendNotification
         ...(customerData.address && {
           address: customerData.address.address,
           addressNumber: customerData.address.addressNumber,
