@@ -357,15 +357,15 @@ const UsersPage: React.FC = () => {
               ))}
             </select>
             
-            <Select
+            <select
               value={statusFilter}
-              onChange={(value) => setStatusFilter(value as 'all' | 'active' | 'inactive')}
-              options={[
-                { value: 'all', label: 'Todos os Status' },
-                { value: 'active', label: 'Ativo' },
-                { value: 'inactive', label: 'Inativo' }
-              ]}
-            />
+              onChange={(e) => setStatusFilter(e.target.value as 'all' | 'active' | 'inactive')}
+              className="px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="all">Todos os Status</option>
+              <option value="active">Ativo</option>
+              <option value="inactive">Inativo</option>
+            </select>
             
             <Button variant="outline" className="flex items-center gap-2">
               <Filter className="h-4 w-4" />
