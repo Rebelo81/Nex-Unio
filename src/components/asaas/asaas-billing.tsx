@@ -237,7 +237,7 @@ export function AsaasBilling({
       
       toast({
         title: 'Status atualizado',
-        description: `Status: ${getStatusLabel(updatedPayment.status)}`
+        description: `Status: ${getStatusLabel(updatedPayment?.status || 'PENDING')}`
       });
     } catch (error) {
       console.error('Erro ao atualizar status:', error);
