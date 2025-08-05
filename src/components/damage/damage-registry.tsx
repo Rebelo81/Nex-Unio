@@ -124,7 +124,9 @@ export function DamageRegistry({
 
     const updatedDamages = [...damages, damage];
     setDamages(updatedDamages);
-    onDamageRegistered(updatedDamages);
+    if (onDamageRegistered) {
+      onDamageRegistered(updatedDamages);
+    }
 
     // Reset form
     setNewDamage({
