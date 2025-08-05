@@ -181,7 +181,7 @@ export function AsaasBilling({
 
       // Criar pagamento
       const payment = await createPayment({
-        customer: customer.id,
+        customerId: customer.id,
         billingType,
         value: finalAmount,
         dueDate: billingData.dueDate,
