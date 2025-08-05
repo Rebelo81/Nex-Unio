@@ -62,55 +62,59 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
-/* Force dark background */
-html, body, #__next {
+/* Force black background everywhere */
+html, body, #__next, main, div, section, article {
   background-color: #000000 !important;
   min-height: 100vh;
 }
 
-/* Force ALL text to be yellow */
+/* Force ALL text to be dark yellow */
 *, *::before, *::after {
-  color: #ffff00 !important;
+  color: #d4a017 !important;
 }
 
-/* Override specific element colors to yellow */
+/* Override specific element colors to dark yellow */
 h1, h2, h3, h4, h5, h6, p, span, div, td, th, label, button, a, input, textarea, select {
-  color: #ffff00 !important;
+  color: #d4a017 !important;
 }
 
-/* Form elements with yellow text */
+/* Form elements with dark yellow text */
 input, textarea, select {
-  background-color: #1a1a1a !important;
+  background-color: #000000 !important;
   border-color: #333333 !important;
-  color: #ffff00 !important;
+  color: #d4a017 !important;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #cccc00 !important;
+  color: #b8941a !important;
 }
 
 /* Buttons and links */
 button {
-  background-color: #1a1a1a !important;
+  background-color: #000000 !important;
   border-color: #333333 !important;
-  color: #ffff00 !important;
+  color: #d4a017 !important;
+}
+
+button:hover {
+  background-color: #1a1a1a !important;
 }
 
 /* Tables */
 table {
-  background-color: #0a0a0a !important;
+  background-color: #000000 !important;
   border-color: #333333 !important;
 }
 
 /* Cards and panels */
-.bg-white, [class*="bg-white"] {
-  background-color: #0a0a0a !important;
+.bg-white, [class*="bg-white"], .bg-gray-50, .bg-gray-100 {
+  background-color: #000000 !important;
 }
 
 /* Ensure badges and status indicators are readable */
 .bg-green-100, .bg-red-100, .bg-blue-100, .bg-yellow-100 {
   background-color: #1a1a1a !important;
-  color: #ffff00 !important;
+  color: #d4a017 !important;
 }
 
 /* Override Tailwind text colors */
