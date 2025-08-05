@@ -75,10 +75,10 @@ interface CustomerData {
 }
 
 export function AsaasBilling({ 
-  reportId, 
-  rentalId, 
-  totalAmount, 
-  damages, 
+  reportId = 'demo', 
+  rentalId = 'demo', 
+  totalAmount = 0, 
+  damages = [], 
   onBillingGenerated 
 }: AsaasBillingProps) {
   const { toast } = useToast();
