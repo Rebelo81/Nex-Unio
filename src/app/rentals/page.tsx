@@ -740,7 +740,7 @@ export default function RentalsPage() {
                                )}
                                {rental.status === 'conferencia' && (
                                  <div className="text-xs text-purple-600">
-                                   <strong>Status:</strong> {rental.inspectionStarted ? 'Conferência em andamento' : 'Aguardando conferência'}
+                                   <strong>Status:</strong> {rental.inspectionDate ? 'Conferência em andamento' : 'Aguardando conferência'}
                                    {rental.returnedAt && (
                                      <div>Retornado em: {new Date(rental.returnedAt).toLocaleString('pt-BR')}</div>
                                    )}
