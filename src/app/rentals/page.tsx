@@ -78,6 +78,7 @@ export default function RentalsPage() {
               zipCode: '01234-567'
             },
             status: 'active',
+            totalRentals: 5,
             createdAt: new Date(),
             updatedAt: new Date()
           },
