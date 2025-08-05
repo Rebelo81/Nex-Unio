@@ -68,6 +68,51 @@ html, body, #__next {
   min-height: 100vh;
 }
 
+/* Force ALL text to be yellow */
+*, *::before, *::after {
+  color: #ffff00 !important;
+}
+
+/* Override specific element colors to yellow */
+h1, h2, h3, h4, h5, h6, p, span, div, td, th, label, button, a, input, textarea, select {
+  color: #ffff00 !important;
+}
+
+/* Form elements with yellow text */
+input, textarea, select {
+  background-color: #1a1a1a !important;
+  border-color: #333333 !important;
+  color: #ffff00 !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #cccc00 !important;
+}
+
+/* Buttons and links */
+button {
+  background-color: #1a1a1a !important;
+  border-color: #333333 !important;
+  color: #ffff00 !important;
+}
+
+/* Tables */
+table {
+  background-color: #0a0a0a !important;
+  border-color: #333333 !important;
+}
+
+/* Cards and panels */
+.bg-white, [class*="bg-white"] {
+  background-color: #0a0a0a !important;
+}
+
+/* Ensure badges and status indicators are readable */
+.bg-green-100, .bg-red-100, .bg-blue-100, .bg-yellow-100 {
+  background-color: #1a1a1a !important;
+  color: #ffff00 !important;
+}
+
 /* Pro Rentals Custom Styles */
 .pro-gradient {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
