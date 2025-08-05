@@ -185,21 +185,7 @@ export function AsaasBilling({
         billingType,
         amount: finalAmount,
         dueDate: billingData.dueDate,
-        description: billingData.description || `Cobrança de avarias - Locação ${rentalId}`,
-        installmentCount: billingData.installments > 1 ? billingData.installments : undefined,
-        installmentValue: billingData.installments > 1 ? 
-          Math.round((finalAmount / billingData.installments) * 100) / 100 : undefined,
-        discount: billingData.discount > 0 ? {
-          value: discountAmount,
-          dueDateLimitDays: 0
-        } : undefined,
-        fine: {
-          value: 2.0
-        },
-        interest: {
-          value: 1.0
-        },
-        postalService: false
+        description: billingData.description || `Cobrança de avarias - Locação ${rentalId}`
       });
 
       setGeneratedPayment(payment);
