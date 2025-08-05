@@ -168,7 +168,7 @@ export function AsaasCustomers() {
         return;
       }
 
-      await createCustomer(formData);
+      await createCustomer({...formData, country: 'Brasil'});
       
       toast({
         title: 'Sucesso',
