@@ -302,8 +302,7 @@ export default function RentalsPage() {
           discountAmount: 0,
           totalAmount: 90.00,
           securityDeposit: 150.00,
-          status: 'em_transporte',
-          substatus: 'on_the_way',
+          status: 'indo_cliente',
           paymentStatus: 'paid',
           deliveryAddress: {
             street: 'Rua da Liberdade',
