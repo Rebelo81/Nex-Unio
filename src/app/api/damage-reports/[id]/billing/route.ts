@@ -413,11 +413,10 @@ async function generateAsaasBilling(
       dueDate: data.dueDate,
       status: 'pending',
       paymentUrl: `https://app.asaas.com/pay/${reference}`,
-      pixCode: `00020126580014br.gov.bcb.pix0136${reference}520400005303986540${data.amount.toFixed(2)}5802BR6009SAO PAULO62070503***6304`
+      pixCode: `00020126580014br.gov.bcb.pix0136${reference}520400005303986540${data.amount.toFixed(2)}5802BR6009SAO PAULO62070503***6304`,
+      boletoUrl: `https://app.asaas.com/boleto/${reference}`
     };
   }
-    boletoUrl: `https://app.asaas.com/boleto/${reference}`
-  };
 }
 
 // Função auxiliar para gerar cobrança via cartão de crédito
