@@ -256,7 +256,6 @@ export default function RentalsPage() {
           totalAmount: 120.00,
           securityDeposit: 200.00,
           status: 'aguardando_lalamove',
-          substatus: 'driver_assigned',
           paymentStatus: 'paid',
           deliveryAddress: {
             street: 'Rua Augusta',
