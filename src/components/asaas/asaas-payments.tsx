@@ -188,10 +188,7 @@ export function AsaasPayments() {
         return;
       }
 
-      await refundPayment(selectedPayment.id, {
-        value: refundValue,
-        description: refundDescription
-      });
+      await refundPayment(selectedPayment.id, refundValue);
       
       toast({
         title: 'Sucesso',
