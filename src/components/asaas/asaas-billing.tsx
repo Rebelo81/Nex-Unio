@@ -82,12 +82,11 @@ export function AsaasBilling({
   onBillingGenerated 
 }: AsaasBillingProps) {
   const { toast } = useToast();
-  const { 
-    createCustomer, 
-    createPayment, 
+  const {
+    createCustomer,
+    createPayment,
     getPayment, 
     getPixQrCode, 
-    getBoleto,
     formatCurrency: asaasFormatCurrency,
     isLoading 
   } = useAsaas();
