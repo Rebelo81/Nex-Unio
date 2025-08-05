@@ -166,7 +166,7 @@ export function AsaasBilling({
         cpfCnpj: customerData.cpfCnpj,
         email: customerData.email,
         phone: customerData.phone,
-        notificationDisabled: !billingData.sendNotification,
+        country: 'Brasil',
         ...(customerData.address && {
           address: customerData.address.address,
           addressNumber: customerData.address.addressNumber,
