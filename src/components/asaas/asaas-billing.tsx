@@ -32,10 +32,10 @@ import {
 import { formatCurrency, formatDate } from '@/lib/utils';
 
 interface AsaasBillingProps {
-  reportId: string;
-  rentalId: string;
-  totalAmount: number;
-  damages: Array<{
+  reportId?: string;
+  rentalId?: string;
+  totalAmount?: number;
+  damages?: Array<{
     id: string;
     itemName: string;
     description: string;
