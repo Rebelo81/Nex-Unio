@@ -106,6 +106,15 @@ export function DamageRegistry({
     notes: ''
   });
 
+  // Sincronizar com onChange quando disponível
+  useEffect(() => {
+    if (onChange) {
+      onChange(damages);
+    } else if (onDamageRegistered) {
+      onDamageRegistered(damages);
+    }
+  }, [damages, onChange, onDamageRegistered]);
+
   const handleAddDamage = () => {
     if (!newDamage.itemName || !newDamage.description || !newDamage.reportedBy) {
       toast.error('Preencha todos os campos obrigatórios');
