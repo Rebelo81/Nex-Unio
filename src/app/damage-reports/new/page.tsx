@@ -12,6 +12,7 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 import { DamageRegistry } from '@/components/damage/damage-registry';
+import { DamageItem, DamageReport } from '@/types/damage';
 import {
   ArrowLeft,
   Save,
