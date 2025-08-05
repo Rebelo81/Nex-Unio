@@ -57,7 +57,7 @@ export default function RentalsPage() {
       // Simular carregamento
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Mock rentals
+      // Mock rentals - versão simplificada
       const mockRentals: Rental[] = [
         {
           id: '1',
@@ -68,56 +68,13 @@ export default function RentalsPage() {
             name: 'João Silva',
             email: 'joao@email.com',
             phone: '(11) 99999-9999',
-            document: '123.456.789-00',
-            address: {
-              street: 'Rua das Flores',
-              number: '123',
-              neighborhood: 'Centro',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01234-567'
-            },
             status: 'active',
             totalRentals: 5,
             createdAt: new Date(),
             updatedAt: new Date()
           },
           partnerId: partnerId || '1',
-          items: [
-            {
-              id: '1',
-              equipmentId: '1',
-              equipment: {
-                id: '1',
-                name: 'Furadeira de Impacto Bosch',
-                description: 'Furadeira profissional',
-                categoryId: '1',
-                partnerId: partnerId || '1',
-                dailyRate: 25.00,
-                discountOptions: [],
-                securityDeposit: 100.00,
-                stockQuantity: 5,
-                minStockAlert: 2,
-                currentStock: 3,
-                dimensions: {
-                  length: 25,
-                  width: 8,
-                  height: 20,
-                  weight: 1.5,
-                  lalamoveValidated: true
-                },
-                images: [],
-                returnChecklist: [],
-                status: 'active',
-                createdAt: new Date(),
-                updatedAt: new Date()
-              },
-              quantity: 1,
-              dailyRate: 25.00,
-              days: 3,
-              subtotal: 75.00
-            }
-          ],
+          items: [],
           startDate: new Date('2024-01-25'),
           endDate: new Date('2024-01-28'),
           createdAt: new Date('2024-01-20'),
@@ -138,8 +95,7 @@ export default function RentalsPage() {
             state: 'SP',
             zipCode: '01234-567'
           },
-          receiptPrinted: false,
-          notes: 'Cliente solicitou entrega pela manhã'
+          receiptPrinted: false
         },
         {
           id: '2',
@@ -150,56 +106,13 @@ export default function RentalsPage() {
             name: 'Maria Santos',
             email: 'maria@email.com',
             phone: '(11) 88888-8888',
-            document: '987.654.321-00',
-            address: {
-              street: 'Av. Paulista',
-              number: '1000',
-              neighborhood: 'Bela Vista',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01310-100'
-            },
             status: 'active',
             totalRentals: 3,
             createdAt: new Date(),
             updatedAt: new Date()
           },
           partnerId: partnerId || '1',
-          items: [
-            {
-              id: '2',
-              equipmentId: '2',
-              equipment: {
-                id: '2',
-                name: 'Cortador de Grama Elétrico',
-                description: 'Cortador 1200W',
-                categoryId: '2',
-                partnerId: partnerId || '1',
-                dailyRate: 35.00,
-                discountOptions: [],
-                securityDeposit: 150.00,
-                stockQuantity: 3,
-                minStockAlert: 1,
-                currentStock: 1,
-                dimensions: {
-                  length: 120,
-                  width: 45,
-                  height: 100,
-                  weight: 12.5,
-                  lalamoveValidated: false
-                },
-                images: [],
-                returnChecklist: [],
-                status: 'active',
-                createdAt: new Date(),
-                updatedAt: new Date()
-              },
-              quantity: 1,
-              dailyRate: 35.00,
-              days: 2,
-              subtotal: 70.00
-            }
-          ],
+          items: [],
           startDate: new Date('2024-01-26'),
           endDate: new Date('2024-01-28'),
           createdAt: new Date('2024-01-21'),
@@ -209,7 +122,7 @@ export default function RentalsPage() {
           totalAmount: 70.00,
           securityDeposit: 150.00,
           paidAmount: 70.00,
-          status: 'solicitar_lalamove',
+          status: 'em_uso',
           paymentStatus: 'paid',
           deliveryMethod: 'delivery',
           deliveryAddress: {
@@ -220,335 +133,7 @@ export default function RentalsPage() {
             state: 'SP',
             zipCode: '01310-100'
           },
-          receiptPrinted: true,
-          receiptPrintedAt: new Date('2024-01-21T10:30:00'),
-          receiptPrintedBy: 'Operador 1'
-        },
-        {
-          id: '3',
-          orderNumber: 'LOC-2024-003',
-          clientId: '3',
-          client: {
-            id: '3',
-            name: 'Carlos Oliveira',
-            email: 'carlos@email.com',
-            phone: '(11) 77777-7777',
-            document: '456.789.123-00',
-            address: {
-              street: 'Rua Augusta',
-              number: '500',
-              neighborhood: 'Consolação',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01305-000'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-27'),
-          endDate: new Date('2024-01-30'),
-          createdAt: new Date('2024-01-22'),
-          updatedAt: new Date('2024-01-22'),
-          subtotal: 120.00,
-          discountAmount: 0,
-          totalAmount: 120.00,
-          securityDeposit: 200.00,
-          paidAmount: 120.00,
-          status: 'aguardando_lalamove',
-          paymentStatus: 'paid',
-          deliveryMethod: 'delivery',
-          deliveryAddress: {
-            street: 'Rua Augusta',
-            number: '500',
-            neighborhood: 'Consolação',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '01305-000'
-          },
-          receiptPrinted: true,
-          lalamoveDeliveryId: 'LLM-123456'
-        },
-        {
-          id: '4',
-          orderNumber: 'LOC-2024-004',
-          clientId: '4',
-          client: {
-            id: '4',
-            name: 'Ana Costa',
-            email: 'ana@email.com',
-            phone: '(11) 66666-6666',
-            document: '789.123.456-00',
-            address: {
-              street: 'Rua da Liberdade',
-              number: '200',
-              neighborhood: 'Liberdade',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01503-000'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-28'),
-          endDate: new Date('2024-01-31'),
-          createdAt: new Date('2024-01-23'),
-          subtotal: 90.00,
-          discountAmount: 0,
-          totalAmount: 90.00,
-          securityDeposit: 150.00,
-          status: 'indo_cliente',
-          paymentStatus: 'paid',
-          deliveryAddress: {
-            street: 'Rua da Liberdade',
-            number: '200',
-            neighborhood: 'Liberdade',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '01503-000'
-          },
-          receiptPrinted: true,
-          lalamoveDeliveryId: 'LLM-789012'
-        },
-        {
-          id: '5',
-          orderNumber: 'LOC-2024-005',
-          clientId: '5',
-          client: {
-            id: '5',
-            name: 'Pedro Santos',
-            email: 'pedro@email.com',
-            phone: '(11) 55555-5555',
-            document: '321.654.987-00',
-            address: {
-              street: 'Av. Faria Lima',
-              number: '1500',
-              neighborhood: 'Itaim Bibi',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '04538-132'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-29'),
-          endDate: new Date('2024-02-01'),
-          createdAt: new Date('2024-01-24'),
-          subtotal: 160.00,
-          discountAmount: 0,
-          totalAmount: 160.00,
-          securityDeposit: 250.00,
-          status: 'aguardando_motorista',
-          paymentStatus: 'paid',
-          deliveryAddress: {
-            street: 'Av. Faria Lima',
-            number: '1500',
-            neighborhood: 'Itaim Bibi',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '04538-132'
-          },
-          receiptPrinted: true,
-          lalamoveDeliveryId: 'LLM-345678',
-          lalamoveStatus: 'DRIVER_ASSIGNED'
-        },
-        {
-          id: '6',
-          orderNumber: 'LOC-2024-006',
-          clientId: '6',
-          client: {
-            id: '6',
-            name: 'Mariana Lima',
-            email: 'mariana@email.com',
-            phone: '(11) 44444-4444',
-            document: '654.321.987-00',
-            address: {
-              street: 'Rua Oscar Freire',
-              number: '800',
-              neighborhood: 'Jardins',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01426-001'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-30'),
-          endDate: new Date('2024-02-02'),
-          createdAt: new Date('2024-01-25'),
-          subtotal: 200.00,
-          discountAmount: 0,
-          totalAmount: 200.00,
-          securityDeposit: 300.00,
-          status: 'indo_cliente',
-          paymentStatus: 'paid',
-          deliveryAddress: {
-            street: 'Rua Oscar Freire',
-            number: '800',
-            neighborhood: 'Jardins',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '01426-001'
-          },
-          receiptPrinted: true,
-          lalamoveDeliveryId: 'LLM-567890',
-          lalamoveStatus: 'ON_GOING',
-          driverInfo: {
-            name: 'Carlos Silva',
-            phone: '(11) 99999-1111',
-            vehicle: 'Fiat Fiorino - ABC1234'
-          },
-          trackingUrl: 'https://lalamove.com/track/LLM-567890'
-        },
-        {
-          id: '7',
-          orderNumber: 'LOC-2024-007',
-          clientId: '7',
-          client: {
-            id: '7',
-            name: 'Roberto Costa',
-            email: 'roberto@email.com',
-            phone: '(11) 33333-3333',
-            document: '987.321.654-00',
-            address: {
-              street: 'Rua Haddock Lobo',
-              number: '300',
-              neighborhood: 'Cerqueira César',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01414-001'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-20'),
-          endDate: new Date('2024-01-25'),
-          createdAt: new Date('2024-01-15'),
-          subtotal: 300.00,
-          discountAmount: 0,
-          totalAmount: 300.00,
-          securityDeposit: 400.00,
-          status: 'devolucao_solicitada',
-          paymentStatus: 'paid',
-          deliveryAddress: {
-            street: 'Rua Haddock Lobo',
-            number: '300',
-            neighborhood: 'Cerqueira César',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '01414-001'
-          },
-          receiptPrinted: true,
-          returnRequestedAt: new Date('2024-01-25T14:30:00')
-        },
-        {
-          id: '8',
-          orderNumber: 'LOC-2024-008',
-          clientId: '8',
-          client: {
-            id: '8',
-            name: 'Fernanda Oliveira',
-            email: 'fernanda@email.com',
-            phone: '(11) 22222-2222',
-            document: '123.987.654-00',
-            address: {
-              street: 'Av. Rebouças',
-              number: '1200',
-              neighborhood: 'Pinheiros',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '05402-100'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-18'),
-          endDate: new Date('2024-01-22'),
-          createdAt: new Date('2024-01-13'),
-          subtotal: 180.00,
-          discountAmount: 0,
-          totalAmount: 180.00,
-          securityDeposit: 250.00,
-          status: 'voltando_loja',
-          paymentStatus: 'paid',
-          deliveryAddress: {
-            street: 'Av. Rebouças',
-            number: '1200',
-            neighborhood: 'Pinheiros',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '05402-100'
-          },
-          receiptPrinted: true,
-          returnLalamoveOrderId: 'LLM-RETURN-123',
-          returnTrackingUrl: 'https://lalamove.com/track/LLM-RETURN-123',
-          driverInfo: {
-            name: 'João Motorista',
-            phone: '(11) 88888-2222',
-            vehicle: 'Honda HR-V - XYZ5678'
-          }
-        },
-        {
-          id: '9',
-          orderNumber: 'LOC-2024-009',
-          clientId: '9',
-          client: {
-            id: '9',
-            name: 'Lucas Pereira',
-            email: 'lucas@email.com',
-            phone: '(11) 11111-1111',
-            document: '456.123.789-00',
-            address: {
-              street: 'Rua Consolação',
-              number: '600',
-              neighborhood: 'Consolação',
-              city: 'São Paulo',
-              state: 'SP',
-              zipCode: '01302-000'
-            },
-            status: 'active',
-            createdAt: new Date(),
-            updatedAt: new Date()
-          },
-          partnerId: partnerId || '1',
-          items: [],
-          startDate: new Date('2024-01-16'),
-          endDate: new Date('2024-01-20'),
-          createdAt: new Date('2024-01-11'),
-          subtotal: 220.00,
-          discountAmount: 0,
-          totalAmount: 220.00,
-          securityDeposit: 300.00,
-          status: 'conferencia',
-          paymentStatus: 'paid',
-          deliveryAddress: {
-            street: 'Rua Consolação',
-            number: '600',
-            neighborhood: 'Consolação',
-            city: 'São Paulo',
-            state: 'SP',
-            zipCode: '01302-000'
-          },
-          receiptPrinted: true,
-          returnedAt: new Date('2024-01-20T16:00:00'),
-          inspectionStarted: false
+          receiptPrinted: true
         }
       ];
       
