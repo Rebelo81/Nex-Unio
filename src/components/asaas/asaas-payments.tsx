@@ -239,8 +239,8 @@ export function AsaasPayments() {
       const updatedPayment = await getPayment(paymentId);
       
       // Atualizar na lista
-      setPayments(prev => prev.map(p => p.id === paymentId ? updatedPayment : p));
-      setFilteredPayments(prev => prev.map(p => p.id === paymentId ? updatedPayment : p));
+      setPayments(prev => prev.map(p => p.id === paymentId ? (updatedPayment as Payment) : p));
+      setFilteredPayments(prev => prev.map(p => p.id === paymentId ? (updatedPayment as Payment) : p));
       
       toast({
         title: 'Status atualizado',
