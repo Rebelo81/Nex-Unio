@@ -83,9 +83,9 @@ export function AsaasPayments() {
     refundPayment,
     payWithCreditCard,
     getPixQrCode,
-    getBoleto,
+    getBankSlip,
     formatCurrency: asaasFormatCurrency,
-    isLoading 
+    loading: isLoading 
   } = useAsaas();
 
   const [payments, setPayments] = useState<Payment[]>([]);
