@@ -154,7 +154,8 @@ export default function RentalsPage() {
           motorista_indo_cliente: 0,
           voltando_loja: 1,
           conferencia: 1,
-          finalizado: 0
+          finalizado: 0,
+          cancelado: 0
         },
         totalRevenue: mockRentals.reduce((sum, r) => sum + r.totalAmount, 0),
         averageOrderValue: mockRentals.reduce((sum, r) => sum + r.totalAmount, 0) / mockRentals.length,
