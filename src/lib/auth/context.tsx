@@ -77,7 +77,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     initAuth();
   }, []);
 
-  const login = async (email: string, password: string) => {
+  const login = async (email: string, password: string): Promise<boolean> => {
     try {
       const response = await fetch('/api/auth/login', {
         method: 'POST',
@@ -88,8 +88,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       });
 
       if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.message || 'Erro ao fazer login');
+        return false; // Login falhou
       }
 
       const { user: userData, token } = await response.json();
@@ -99,9 +98,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
       
       // Atualizar estado do usuário
       setUser(userData);
+      return true; // Login bem-sucedido
     } catch (error) {
       console.error('Erro no login:', error);
-      throw error;
+      return false; // Login falhou
     }
   };
 
