@@ -104,8 +104,8 @@ export function AsaasCustomers() {
   const loadCustomers = async () => {
     try {
       const response = await listCustomers();
-      setCustomers(response || []);
-      setFilteredCustomers(response || []);
+      setCustomers(response as Customer[] || []);
+      setFilteredCustomers(response as Customer[] || []);
     } catch (error) {
       console.error('Erro ao carregar clientes:', error);
       toast({
