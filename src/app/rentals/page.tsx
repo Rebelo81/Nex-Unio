@@ -746,11 +746,6 @@ export default function RentalsPage() {
                                    )}
                                  </div>
                                )}
-                               {rental.returnRequestedAt && (
-                                 <div className="text-xs text-orange-600">
-                                   <strong>Devolução solicitada:</strong> {new Date(rental.returnRequestedAt).toLocaleString('pt-BR')}
-                                 </div>
-                               )}
                             </div>
                             
                             {/* Card Actions */}
