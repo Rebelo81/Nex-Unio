@@ -35,6 +35,16 @@ export interface Client {
   name: string;
   email: string;
   phone: string;
+  document?: string;
+  address?: {
+    street: string;
+    number: string;
+    complement?: string;
+    neighborhood: string;
+    city: string;
+    state: string;
+    zipCode: string;
+  };
   status: 'active' | 'inactive';
   totalRentals: number;
   createdAt: Date;
