@@ -150,7 +150,7 @@ export function AsaasPayments() {
     if (payment.billingType === 'PIX') {
       try {
         const pixData = await getPixQrCode(payment.id);
-        setPixQrCode(pixData.payload);
+        setPixQrCode(pixData?.payload || '');
       } catch (error) {
         console.warn('Erro ao carregar QR Code PIX:', error);
       }
@@ -159,7 +159,7 @@ export function AsaasPayments() {
     if (payment.billingType === 'BOLETO') {
       try {
         const boleto = await getBankSlip(payment.id);
-        setBoletoUrl(boleto.bankSlipUrl);
+        setBoletoUrl(boleto?.bankSlipUrl || '');
       } catch (error) {
         console.warn('Erro ao carregar boleto:', error);
       }
