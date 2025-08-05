@@ -61,6 +61,12 @@ body {
   font-family: var(--font-inter), Inter, system-ui, sans-serif;
 }
 
+/* Force dark background */
+html, body, #__next {
+  background-color: #000000 !important;
+  min-height: 100vh;
+}
+
 /* Pro Rentals Custom Styles */
 .pro-gradient {
   background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
