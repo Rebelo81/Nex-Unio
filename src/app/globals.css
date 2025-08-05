@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* Force theme globally */
+* {
+  background-color: #000000 !important;
+  color: #d4a017 !important;
+}
+
+/* Specific overrides for common elements */
+body, html, #__next, main, section, article, div, nav, header, footer {
+  background-color: #000000 !important;
+  color: #d4a017 !important;
+}
+
+/* White backgrounds to black */
+.bg-white, .bg-gray-50, .bg-gray-100, .bg-gray-200, .bg-slate-50 {
+  background-color: #000000 !important;
+}
+
+/* Text colors to dark yellow */
+.text-white, .text-black, .text-gray-900, .text-gray-800, .text-gray-700, .text-gray-600 {
+  color: #d4a017 !important;
+}
+
 :root {
   /* Pro Rentals Color Variables - Dark Theme with Dark Yellow Text */
   --primary: #f97316;
