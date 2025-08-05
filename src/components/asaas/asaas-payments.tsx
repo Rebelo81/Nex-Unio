@@ -158,7 +158,7 @@ export function AsaasPayments() {
     
     if (payment.billingType === 'BOLETO') {
       try {
-        const boleto = await getBoleto(payment.id);
+        const boleto = await getBankSlip(payment.id);
         setBoletoUrl(boleto.bankSlipUrl);
       } catch (error) {
         console.warn('Erro ao carregar boleto:', error);
