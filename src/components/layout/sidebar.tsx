@@ -161,7 +161,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4 space-y-2">
+      <nav className="flex-1 p-4 space-y-1" style={{ backgroundColor: '#000000' }}>
         {availableMenuItems.map((item) => {
           const isActive = pathname === item.path || pathname.startsWith(item.path + '/');
           const IconComponent = iconMap[item.icon as keyof typeof iconMap];
@@ -171,16 +171,27 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
               key={item.path}
               href={item.path}
               className={cn(
-                'flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                'flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200',
                 isActive
-                  ? 'bg-primary-50 text-primary-700 border-r-2 border-primary-500'
-                  : 'text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900'
+                  ? 'border-l-4 border-yellow-500 shadow-lg'
+                  : 'hover:border-l-4 hover:border-yellow-600 hover:shadow-md'
               )}
+              style={{
+                backgroundColor: isActive ? '#1a1a0d' : 'transparent',
+                color: isActive ? '#d4a017' : '#b8941a',
+                borderRadius: '8px'
+              }}
               title={collapsed ? item.label : undefined}
             >
-              <IconComponent className={cn('h-5 w-5 flex-shrink-0', isActive ? 'text-primary-700' : 'text-neutral-400')} />
+              <IconComponent className={cn(
+                'h-5 w-5 flex-shrink-0', 
+                isActive ? 'text-yellow-500' : 'text-yellow-600'
+              )} />
               {!collapsed && (
-                <span className="truncate">{item.label}</span>
+                <span className="truncate font-semibold">{item.label}</span>
+              )}
+              {isActive && !collapsed && (
+                <div className="ml-auto w-2 h-2 bg-yellow-500 rounded-full"></div>
               )}
             </Link>
           );
