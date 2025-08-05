@@ -313,8 +313,7 @@ export default function RentalsPage() {
             zipCode: '01503-000'
           },
           receiptPrinted: true,
-          lalamoveDeliveryId: 'LLM-789012',
-          lalamoveStatus: 'ON_GOING'
+          lalamoveDeliveryId: 'LLM-789012'
         },
         {
           id: '5',
