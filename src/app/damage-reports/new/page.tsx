@@ -26,8 +26,6 @@ import {
   RefreshCw
 } from 'lucide-react';
 
-import { DamageItem, DamageReport } from '@/types/damage';
-
 export default function NewDamageReportPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
