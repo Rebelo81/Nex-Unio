@@ -65,7 +65,7 @@ const WEBHOOK_EVENTS: WebhookEvent[] = [
 
 export function AsaasWebhooks() {
   const { toast } = useToast();
-  const { isLoading } = useAsaas();
+  const { loading: isLoading } = useAsaas();
 
   const [webhooks, setWebhooks] = useState<WebhookData[]>([]);
   const [selectedWebhook, setSelectedWebhook] = useState<WebhookData | null>(null);
