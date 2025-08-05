@@ -536,12 +536,12 @@ export function AsaasBilling({
                 Atualizar Status
               </Button>
               {generatedPayment?.invoiceUrl && (
-                <Button variant="outline" size="sm" asChild>
-                  <a href={generatedPayment.invoiceUrl} target="_blank" rel="noopener noreferrer">
+                <a href={generatedPayment.invoiceUrl} target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" size="sm">
                     <ExternalLink className="h-4 w-4 mr-1" />
                     Ver Fatura
-                  </a>
-                </Button>
+                  </Button>
+                </a>
               )}
             </div>
           </div>
