@@ -1,32 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  /* Pro Rentals Color Variables - Dark Theme */
+  /* Pro Rentals Color Variables - Dark Theme with Yellow Text */
   --primary: #f97316;
-  --primary-foreground: #ffffff;
+  --primary-foreground: #000000;
   --secondary: #0284c7;
-  --secondary-foreground: #ffffff;
+  --secondary-foreground: #ffff00;
   --success: #22c55e;
   --warning: #f59e0b;
   --error: #ef4444;
   --neutral: #737373;
   
-  /* Background and text - Dark theme */
+  /* Background and text - Black background, Yellow text */
   --background: #000000;
-  --foreground: #ffffff;
+  --foreground: #ffff00;
   --muted: #1a1a1a;
-  --muted-foreground: #a3a3a3;
+  --muted-foreground: #ffff00;
   
-  /* Border and input - Dark theme */
+  /* Border and input - Dark theme with yellow text */
   --border: #333333;
   --input: #1a1a1a;
-  --ring: #f97316;
+  --input-foreground: #ffff00;
+  --ring: #ffff00;
   
-  /* Card - Dark theme */
+  /* Card - Dark theme with yellow text */
   --card: #0a0a0a;
-  --card-foreground: #ffffff;
+  --card-foreground: #ffff00;
   
-  /* Popover - Dark theme */
+  /* Popover - Dark theme with yellow text */
   --popover: #0a0a0a;
   --popover-foreground: #171717;
 }
