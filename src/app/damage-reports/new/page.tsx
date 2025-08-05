@@ -31,11 +31,12 @@ import { DamageItem, DamageReport } from '@/types/damage';
 export default function NewDamageReportPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const [reportData, setReportData] = useState<DamageReport>({
+  const [reportData, setReportData] = useState<Partial<DamageReport>>({
     rentalId: '',
     damages: [],
     notes: '',
-    createdBy: 'current-user' // Em um sistema real, pegar do contexto de autenticação
+    createdBy: 'current-user', // Em um sistema real, pegar do contexto de autenticação
+    status: 'draft'
   });
   
   const [damages, setDamages] = useState<DamageItem[]>([]);
