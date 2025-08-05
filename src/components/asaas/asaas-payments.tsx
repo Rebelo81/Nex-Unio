@@ -631,12 +631,12 @@ export function AsaasPayments() {
                   Fechar
                 </Button>
                 {selectedPayment.invoiceUrl && (
-                  <Button asChild>
-                    <a href={selectedPayment.invoiceUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Ver Fatura
-                    </a>
+                <a href={selectedPayment.invoiceUrl} target="_blank" rel="noopener noreferrer">
+                  <Button>
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Ver Fatura
                   </Button>
+                </a>
                 )}
               </div>
             </div>
