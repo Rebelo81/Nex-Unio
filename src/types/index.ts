@@ -46,7 +46,7 @@ export interface Client {
     zipCode: string;
   };
   status: 'active' | 'inactive';
-  totalRentals: number;
+  totalRentals?: number;
   createdAt: Date;
   updatedAt: Date;
 }
