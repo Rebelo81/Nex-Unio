@@ -122,28 +122,25 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
   return (
     <div
       className={cn(
-        'bg-white border-r border-gray-200 transition-all duration-300 ease-in-out flex flex-col h-full',
+        'transition-all duration-300 ease-in-out flex flex-col h-full border-r border-gray-800',
         collapsed ? 'w-16' : 'w-64'
       )}
+      style={{ backgroundColor: '#000000', color: '#d4a017' }}
     >
       {/* Header */}
-      <div className="p-4 border-b border-gray-200 flex items-center justify-between">
+      <div className="p-4 border-b border-gray-800 flex items-center justify-between" style={{ backgroundColor: '#000000' }}>
         {!collapsed && (
-          <div className="flex items-center space-x-2">
-            <Link href="/dashboard" className="w-12 h-12 flex items-center justify-center relative">
-              <Image 
-                src="/ProRentals.png" 
-                alt="Pro Rentals" 
-                fill
-                className="object-contain cursor-pointer transform transition-all duration-300 hover:scale-105 hover:brightness-110" 
-                title="Ir para Dashboard"
-                priority
-              />
-            </Link>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-lg flex items-center justify-center font-bold text-black text-lg shadow-lg">
+              PR
+            </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-neutral-900">Pro Rentals</span>
+              <span className="font-bold text-lg" style={{ color: '#d4a017' }}>Pro Rentals</span>
+              <span className="text-xs font-medium" style={{ color: '#b8941a' }}>
+                Sistema Executivo
+              </span>
               {user && (
-                <span className="text-xs text-gray-500 capitalize">
+                <span className="text-xs capitalize" style={{ color: '#996f1a' }}>
                   {user.role.toLowerCase().replace('_', ' ')}
                 </span>
               )}
@@ -152,12 +149,13 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
         )}
         <button
           onClick={onToggle}
-          className="p-1.5 rounded-md hover:bg-gray-100 transition-colors"
+          className="p-1.5 rounded-md hover:bg-gray-900 transition-colors"
+          style={{ color: '#d4a017' }}
         >
           {collapsed ? (
-            <ChevronRight className="h-4 w-4 text-gray-600" />
+            <ChevronRight className="h-4 w-4" />
           ) : (
-            <ChevronLeft className="h-4 w-4 text-gray-600" />
+            <ChevronLeft className="h-4 w-4" />
           )}
         </button>
       </div>
