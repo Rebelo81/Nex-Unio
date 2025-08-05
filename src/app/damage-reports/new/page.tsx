@@ -318,7 +318,7 @@ export default function NewDamageReportPage() {
                 <DamageRegistry
                   damages={damages}
                   onChange={handleDamagesChange}
-                  rentalId={reportData.rentalId}
+                  rentalId={reportData.rentalId || ''}
                 />
               </CardContent>
             </Card>
