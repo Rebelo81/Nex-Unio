@@ -552,17 +552,19 @@ const PartnersPage: React.FC = () => {
             />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Select
-                label="Status"
-                value={formData.status}
-                onChange={(value) => setFormData({ ...formData, status: value as 'active' | 'inactive' | 'pending' })}
-                options={[
-                  { value: 'active', label: 'Ativo' },
-                  { value: 'inactive', label: 'Inativo' },
-                  { value: 'blocked', label: 'Bloqueado' }
-                ]}
-                disabled={modalMode === 'view'}
-              />
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                <select
+                  value={formData.status}
+                  onChange={(e) => setFormData({ ...formData, status: e.target.value as 'active' | 'inactive' | 'pending' })}
+                  disabled={modalMode === 'view'}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100"
+                >
+                  <option value="active">Ativo</option>
+                  <option value="inactive">Inativo</option>
+                  <option value="pending">Pendente</option>
+                </select>
+              </div>
               
               <Input
                 label="Taxa de Comissão (%)"
