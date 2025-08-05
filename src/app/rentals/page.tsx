@@ -212,7 +212,6 @@ export default function RentalsPage() {
           status: 'solicitar_lalamove',
           paymentStatus: 'paid',
           deliveryMethod: 'delivery',
-          paymentStatus: 'paid',
           deliveryAddress: {
             street: 'Av. Paulista',
             number: '1000',
