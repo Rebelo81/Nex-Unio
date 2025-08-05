@@ -82,7 +82,7 @@ export function AsaasCustomers() {
     deleteCustomer, 
     getCustomer,
     validateCpfCnpj,
-    isLoading 
+    loading: isLoading 
   } = useAsaas();
 
   const [customers, setCustomers] = useState<Customer[]>([]);
