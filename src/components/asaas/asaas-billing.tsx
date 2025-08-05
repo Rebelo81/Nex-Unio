@@ -87,6 +87,7 @@ export function AsaasBilling({
     createPayment,
     getPayment, 
     getPixQrCode, 
+    getBankSlip,
     formatCurrency: asaasFormatCurrency,
     isLoading 
   } = useAsaas();
