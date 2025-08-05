@@ -687,17 +687,6 @@ export default function RentalsPage() {
                                   Recibo impresso
                                 </div>
                               )}
-                              {rental.substatus && (
-                                <div className="text-xs text-blue-600">
-                                  <strong>Status:</strong> {
-                                    rental.substatus === 'driver_assigned' ? 'Motorista designado' :
-                                    rental.substatus === 'on_the_way' ? 'A caminho' :
-                                    rental.substatus === 'arrived' ? 'Chegou ao destino' :
-                                    rental.substatus === 'delivered' ? 'Entregue' :
-                                    rental.substatus
-                                  }
-                                </div>
-                              )}
                               {rental.lalamoveDeliveryId && (
                                 <div className="text-xs text-purple-600">
                                   <strong>ID Lalamove:</strong> {rental.lalamoveDeliveryId}
