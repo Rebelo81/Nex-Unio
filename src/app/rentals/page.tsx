@@ -300,9 +300,11 @@ export default function RentalsPage() {
             ? { 
                 ...r, 
                 status: mappedStatus.status as RentalStatus,
-                substatus: mappedStatus.substatus,
-                lalamoveStatus: order.status,
-                driverInfo: order.driverInfo
+                driverInfo: order.driverInfo ? {
+                  name: order.driverInfo.name,
+                  phone: order.driverInfo.phone,
+                  vehicleInfo: order.driverInfo.plateNumber || 'N/A'
+                } : undefined
               }
             : r
         ));
