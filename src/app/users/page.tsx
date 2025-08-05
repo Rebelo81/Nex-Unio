@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select } from '@/components/ui/select';
 import { Modal } from '@/components/ui/modal';
-import { Table } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import {
