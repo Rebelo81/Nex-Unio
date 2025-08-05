@@ -147,7 +147,9 @@ export function DamageRegistry({
   const handleRemoveDamage = (damageId: string) => {
     const updatedDamages = damages.filter(d => d.id !== damageId);
     setDamages(updatedDamages);
-    onDamageRegistered(updatedDamages);
+    if (onDamageRegistered) {
+      onDamageRegistered(updatedDamages);
+    }
     toast.success('Avaria removida');
   };
 
