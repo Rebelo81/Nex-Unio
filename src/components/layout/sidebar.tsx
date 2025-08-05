@@ -199,31 +199,35 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onToggle }) => {
       </nav>
 
       {/* User Info & Logout */}
-      <div className="p-4 border-t border-gray-200 space-y-2">
+      <div className="p-4 border-t border-gray-800 space-y-3" style={{ backgroundColor: '#000000' }}>
         {user && !collapsed && (
-          <div className="text-xs text-gray-600 mb-2">
-            <div className="font-medium truncate">{user.name}</div>
-            <div className="text-gray-500 truncate">{user.email}</div>
+          <div className="bg-gray-900 rounded-lg p-3 border border-gray-800">
+            <div className="font-semibold truncate" style={{ color: '#d4a017' }}>{user.name}</div>
+            <div className="text-xs truncate" style={{ color: '#996f1a' }}>{user.email}</div>
+            <div className="text-xs font-medium mt-1 capitalize" style={{ color: '#b8941a' }}>
+              {user.role.toLowerCase().replace('_', ' ')}
+            </div>
           </div>
         )}
         
         <button
           onClick={handleLogout}
           className={cn(
-            'flex items-center space-x-3 px-3 py-2 rounded-md text-sm font-medium transition-colors w-full',
-            'text-red-600 hover:bg-red-50 hover:text-red-700'
+            'flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-all w-full border border-red-800 hover:border-red-600 hover:bg-red-900/20'
           )}
+          style={{ color: '#ef4444' }}
           title={collapsed ? 'Sair' : undefined}
         >
           <LogOut className="h-5 w-5 flex-shrink-0" />
           {!collapsed && (
-            <span className="truncate">Sair</span>
+            <span className="truncate font-semibold">Sair do Sistema</span>
           )}
         </button>
         
         {!collapsed && (
-          <div className="text-xs text-gray-500 text-center mt-2">
-            Pro Rentals Admin v1.0
+          <div className="text-xs text-center py-2 border-t border-gray-800" style={{ color: '#996f1a' }}>
+            <div className="font-semibold">Pro Rentals Admin</div>
+            <div className="text-xs">Sistema Executivo v2.0</div>
           </div>
         )}
       </div>
