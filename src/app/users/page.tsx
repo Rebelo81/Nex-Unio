@@ -344,17 +344,18 @@ const UsersPage: React.FC = () => {
               />
             </div>
             
-            <Select
+            <select
               value={roleFilter}
-              onChange={(value) => setRoleFilter(value as Role | 'all')}
-              options={[
-                { value: 'all', label: 'Todos os Roles' },
-                ...Object.values(Role).map(role => ({
-                  value: role,
-                  label: getRoleLabel(role)
-                }))
-              ]}
-            />
+              onChange={(e) => setRoleFilter(e.target.value as Role | 'all')}
+              className="px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            >
+              <option value="all">Todos os Roles</option>
+              {Object.values(Role).map(role => (
+                <option key={role} value={role}>
+                  {getRoleLabel(role)}
+                </option>
+              ))}
+            </select>
             
             <Select
               value={statusFilter}
