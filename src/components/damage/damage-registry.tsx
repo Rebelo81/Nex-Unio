@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { DamageItem } from '@/types/damage';
 import {
   PlusIcon,
   TrashIcon,
@@ -16,19 +17,6 @@ import {
   CurrencyDollarIcon
 } from '@heroicons/react/24/outline';
 import { toast } from 'sonner';
-
-interface DamageItem {
-  id: string;
-  itemName: string;
-  description: string;
-  severity: 'low' | 'medium' | 'high' | 'critical';
-  repairCost: number;
-  photos: File[];
-  category: 'structural' | 'functional' | 'aesthetic' | 'missing';
-  reportedBy: string;
-  reportedAt: Date;
-  notes?: string;
-}
 
 interface DamageRegistryProps {
   rentalId: string;
