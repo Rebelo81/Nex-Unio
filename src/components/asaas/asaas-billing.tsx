@@ -195,8 +195,8 @@ export function AsaasBilling({
       // Gerar QR Code PIX se necessário
       if (billingType === 'PIX') {
         try {
-          const pixData = await getPixQrCode(payment.id);
-          setPixQrCode(pixData.payload);
+          const pixData = await getPixQrCode(payment?.id || '');
+          setPixQrCode(pixData?.payload || '');
         } catch (error) {
           console.warn('Erro ao gerar QR Code PIX:', error);
         }
@@ -204,8 +204,8 @@ export function AsaasBilling({
 
       // Gerar boleto
       try {
-        const boleto = await getBankSlip(payment.id);
-        setBoletoUrl(boleto.bankSlipUrl);
+        const boleto = await getBankSlip(payment?.id || '');
+        setBoletoUrl(boleto?.bankSlipUrl || '');
       } catch (error) {
         console.warn('Erro ao gerar boleto:', error);
       }
