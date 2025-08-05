@@ -27,7 +27,6 @@ import {
 } from 'lucide-react';
 
 import { DamageItem, DamageReport } from '@/types/damage';
-}
 
 export default function NewDamageReportPage() {
   const router = useRouter();
