@@ -89,7 +89,7 @@ export function AsaasBilling({
     getPixQrCode, 
     getBankSlip,
     formatCurrency: asaasFormatCurrency,
-    isLoading 
+    loading: isLoading 
   } = useAsaas();
 
   const [step, setStep] = useState<'customer' | 'billing' | 'payment'>('customer');
