@@ -376,90 +376,38 @@ const UsersPage: React.FC = () => {
 
         {/* Users Table */}
         <Card>
-          <Table
-            columns={[
-              {
-                key: 'name',
-                label: 'Nome',
-                render: (user: User) => (
-                  <div>
-                    <div className="font-medium text-gray-900">{user.name}</div>
-                    <div className="text-sm text-gray-500">{user.email}</div>
-                  </div>
-                )
-              },
-              {
-                key: 'role',
-                label: 'Role',
-                render: (user: User) => (
-                  <Badge className={getRoleBadgeColor(user.role)}>
-                    {getRoleLabel(user.role)}
-                  </Badge>
-                )
-              },
-              {
-                key: 'partner',
-                label: 'Parceiro',
-                render: (user: User) => (
-                  user.partnerName ? (
-                    <span className="text-sm text-gray-900">{user.partnerName}</span>
-                  ) : (
-                    <span className="text-sm text-gray-500">-</span>
-                  )
-                )
-              },
-              {
-                key: 'status',
-                label: 'Status',
-                render: (user: User) => (
-                  <Badge className={user.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}>
-                    {user.status === 'active' ? 'Ativo' : 'Inativo'}
-                  </Badge>
-                )
-              },
-              {
-                key: 'lastLogin',
-                label: 'Último Login',
-                render: (user: User) => (
-                  user.lastLogin ? (
-                    <span className="text-sm text-gray-900">
-                      {user.lastLogin.toLocaleDateString('pt-BR')}
-                    </span>
-                  ) : (
-                    <span className="text-sm text-gray-500">Nunca</span>
-                  )
-                )
-              },
-              {
-                key: 'actions',
-                label: 'Ações',
-                render: (user: User) => (
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleEditUser(user)}
-                      className="text-blue-600 hover:text-blue-700"
-                    >
-                      <Edit className="h-4 w-4" />
-                    </Button>
-                    {user.id !== currentUser?.id && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => handleDeleteUser(user.id)}
-                        className="text-red-600 hover:text-red-700"
-                      >
-                        <Trash2 className="h-4 w-4" />
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b">
+                  <th className="text-left py-2 px-4">Nome</th>
+                  <th className="text-left py-2 px-4">Email</th>
+                  <th className="text-left py-2 px-4">Role</th>
+                  <th className="text-left py-2 px-4">Status</th>
+                  <th className="text-left py-2 px-4">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredUsers.map(user => (
+                  <tr key={user.id} className="border-b hover:bg-gray-50">
+                    <td className="py-2 px-4">{user.name}</td>
+                    <td className="py-2 px-4">{user.email}</td>
+                    <td className="py-2 px-4">{getRoleLabel(user.role)}</td>
+                    <td className="py-2 px-4">
+                      <Badge variant={user.status === 'active' ? 'default' : 'secondary'}>
+                        {user.status === 'active' ? 'Ativo' : 'Inativo'}
+                      </Badge>
+                    </td>
+                    <td className="py-2 px-4">
+                      <Button size="sm" variant="outline">
+                        Editar
                       </Button>
-                    )}
-                  </div>
-                )
-              }
-            ]}
-            data={filteredUsers}
-            loading={loading}
-          />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </Card>
 
         {/* Create/Edit User Modal */}
