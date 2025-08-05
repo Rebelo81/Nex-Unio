@@ -343,7 +343,7 @@ export default function RentalsPage() {
     ));
     
     // Simular envio de e-mail de conclusão
-    console.log('Enviando e-mail de conclusão para:', selectedRentalForInspection.client.email);
+    console.log('Enviando e-mail de conclusão para:', selectedRentalForInspection.client?.email);
     
     // Se houver avarias, simular cobrança via Asaas
     if (inspectionData.totalDamageAmount > 0) {
