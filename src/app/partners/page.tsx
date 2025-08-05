@@ -277,16 +277,16 @@ const PartnersPage: React.FC = () => {
               />
             </div>
             <div className="w-full sm:w-48">
-              <Select
+              <select
                 value={statusFilter}
-                onChange={setStatusFilter}
-                options={[
-                  { value: 'all', label: 'Todos os status' },
-                  { value: 'active', label: 'Ativo' },
-                  { value: 'inactive', label: 'Inativo' },
-                  { value: 'pending', label: 'Pendente' }
-                ]}
-              />
+                onChange={(e) => setStatusFilter(e.target.value)}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="all">Todos os status</option>
+                <option value="active">Ativo</option>
+                <option value="inactive">Inativo</option>
+                <option value="pending">Pendente</option>
+              </select>
             </div>
           </div>
         </CardContent>
