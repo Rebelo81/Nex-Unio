@@ -25,24 +25,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 
-interface DamageItem {
-  id: string;
-  itemName: string;
-  description: string;
-  severity: 'low' | 'medium' | 'high' | 'critical';
-  repairCost: number;
-  photos: string[];
-  category: string;
-  responsible: 'tenant' | 'company' | 'third_party' | 'unknown';
-  notes?: string;
-  createdAt: Date;
-}
-
-interface DamageReport {
-  rentalId: string;
-  damages: DamageItem[];
-  notes?: string;
-  createdBy: string;
+import { DamageItem, DamageReport } from '@/types/damage';
 }
 
 export default function NewDamageReportPage() {
