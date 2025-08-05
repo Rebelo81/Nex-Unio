@@ -160,6 +160,7 @@ export default function RentalsPage() {
               zipCode: '01310-100'
             },
             status: 'active',
+            totalRentals: 3,
             createdAt: new Date(),
             updatedAt: new Date()
           },
