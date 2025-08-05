@@ -109,8 +109,8 @@ export function AsaasPayments() {
   const loadPayments = async () => {
     try {
       const response = await listPayments(filters);
-      setPayments(response.data || []);
-      setFilteredPayments(response.data || []);
+      setPayments(response as unknown as Payment[] || []);
+      setFilteredPayments(response as unknown as Payment[] || []);
     } catch (error) {
       console.error('Erro ao carregar pagamentos:', error);
       toast({
