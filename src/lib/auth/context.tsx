@@ -79,26 +79,41 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
+      // Credenciais mock para demonstração
+      const mockCredentials = [
+        { email: 'admin@prorentals.com', password: '123456', role: 'ADMIN' },
+        { email: 'gestor@prorentals.com', password: '123456', role: 'MANAGER' },
+        { email: 'operador@prorentals.com', password: '123456', role: 'OPERATOR' }
+      ];
 
-      if (!response.ok) {
-        return false; // Login falhou
+      // Verificar credenciais mock
+      const mockUser = mockCredentials.find(
+        cred => cred.email === email && cred.password === password
+      );
+
+      if (mockUser) {
+        // Simular usuário logado
+        const userData = {
+          id: '1',
+          name: mockUser.role === 'ADMIN' ? 'Administrador' : 
+                mockUser.role === 'MANAGER' ? 'Gestor' : 'Operador',
+          email: mockUser.email,
+          role: mockUser.role as Role,
+          status: 'active' as const,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+          lastLogin: new Date()
+        };
+        
+        // Salvar token mock
+        localStorage.setItem('auth-token', 'mock-token-' + Date.now());
+        
+        // Atualizar estado do usuário
+        setUser(userData);
+        return true; // Login bem-sucedido
       }
 
-      const { user: userData, token } = await response.json();
-      
-      // Salvar token
-      localStorage.setItem('auth-token', token);
-      
-      // Atualizar estado do usuário
-      setUser(userData);
-      return true; // Login bem-sucedido
+      return false; // Credenciais incorretas
     } catch (error) {
       console.error('Erro no login:', error);
       return false; // Login falhou
