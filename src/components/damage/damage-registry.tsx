@@ -87,11 +87,13 @@ const CATEGORY_CONFIG = {
 
 export function DamageRegistry({
   rentalId,
-  equipmentItems,
+  equipmentItems = [],
   onDamageRegistered,
-  existingDamages = []
+  existingDamages = [],
+  damages: propDamages,
+  onChange
 }: DamageRegistryProps) {
-  const [damages, setDamages] = useState<DamageItem[]>(existingDamages);
+  const [damages, setDamages] = useState<DamageItem[]>(propDamages || existingDamages);
   const [isAddingDamage, setIsAddingDamage] = useState(false);
   const [newDamage, setNewDamage] = useState<Partial<DamageItem>>({
     itemName: '',
