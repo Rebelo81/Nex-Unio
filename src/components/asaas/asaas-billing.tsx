@@ -587,12 +587,12 @@ export function AsaasBilling({
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <Button asChild>
-              <a href={boletoUrl} target="_blank" rel="noopener noreferrer">
+            <a href={boletoUrl} target="_blank" rel="noopener noreferrer">
+              <Button>
                 <FileText className="h-4 w-4 mr-2" />
                 Visualizar Boleto
-              </a>
-            </Button>
+              </Button>
+            </a>
           </CardContent>
         </Card>
       )}
