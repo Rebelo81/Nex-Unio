@@ -32,9 +32,11 @@ interface DamageItem {
 
 interface DamageRegistryProps {
   rentalId: string;
-  equipmentItems: Array<{ id: string; name: string; category: string }>;
-  onDamageRegistered: (damages: DamageItem[]) => void;
+  equipmentItems?: Array<{ id: string; name: string; category: string }>;
+  onDamageRegistered?: (damages: DamageItem[]) => void;
   existingDamages?: DamageItem[];
+  damages?: DamageItem[];
+  onChange?: (newDamages: DamageItem[]) => void;
 }
 
 const SEVERITY_CONFIG = {
