@@ -442,16 +442,21 @@ const UsersPage: React.FC = () => {
               />
             )}
             
-            <Select
-              label="Role"
-              value={formData.role}
-              onChange={(value) => setFormData(prev => ({ ...prev, role: value as Role }))}
-              options={getAvailableRoles().map(role => ({
-                value: role,
-                label: getRoleLabel(role)
-              }))}
-              required
-            />
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Role</label>
+              <select
+                value={formData.role}
+                onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value as Role }))}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                required
+              >
+                {getAvailableRoles().map(role => (
+                  <option key={role} value={role}>
+                    {getRoleLabel(role)}
+                  </option>
+                ))}
+              </select>
+            </div>
             
             <div className="flex justify-end gap-3 pt-4">
               <Button
