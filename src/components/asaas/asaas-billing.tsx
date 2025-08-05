@@ -183,10 +183,9 @@ export function AsaasBilling({
       const payment = await createPayment({
         customerId: customer?.id || 'temp-customer',
         billingType,
-        value: finalAmount,
+        amount: finalAmount,
         dueDate: billingData.dueDate,
         description: billingData.description || `Cobrança de avarias - Locação ${rentalId}`,
-        externalReference: `DAM-${reportId}-${Date.now()}`,
         installmentCount: billingData.installments > 1 ? billingData.installments : undefined,
         installmentValue: billingData.installments > 1 ? 
           Math.round((finalAmount / billingData.installments) * 100) / 100 : undefined,
