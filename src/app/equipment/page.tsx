@@ -175,7 +175,7 @@ export default function EquipmentPage() {
     }));
   };
 
-  const handleStatusFilter = (status: Equipment['status']) => {
+  const handleStatusFilter = (status: Equipment['status'] | 'all') => {
     setFilters(prev => ({ 
       ...prev, 
       status: status === 'all' ? undefined : status 
